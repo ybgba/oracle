@@ -1,0 +1,3 @@
+select c.table_name,c.column_name,c.data_type,c.data_length,c.nullable,c.data_default, d.comments from 
+(select a.* from user_tab_columns a right join user_tables b on b.table_name = a.table_name) c
+right join user_tab_comments d on d.table_name = c.table_name;
